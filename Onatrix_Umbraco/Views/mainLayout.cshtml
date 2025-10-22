@@ -7,7 +7,6 @@
 
     var siteName = siteSettings?.SiteName ?? "Onatrix";
     var title = Model.Level == 1 ? $"{siteName}" : $"{siteName} | {Model.Name}";
-
 }
 
 <!DOCTYPE html>
@@ -20,6 +19,7 @@
 </head>
 <body>
 	<partial name="Partials/Layout/_Topbar.cshtml" />
+    <partial name="Partials/Layout/_Header.cshtml" />
     @RenderBody()
 
 </body>
