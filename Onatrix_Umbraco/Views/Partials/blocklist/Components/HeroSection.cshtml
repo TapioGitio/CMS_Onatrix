@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.HeroSection)Model.Content;
+}
+
+<section id="hero">
+    @if (content.HeroBgImage != null)
+    {
+        <img class="hero-img" src="@content.HeroBgImage.Url()" alt="">
+    }
+    <div class="container">
+        <div class="hero-content">
+            <h1>@content.HeroTitle</h1>
+            <div class="rte">@Html.Raw(content.HeroText)</div>
+            @if (content.HeroLink != null)
+            {
+                <a href="@content.HeroLink.Url" class="btn btn-primary">@content.HeroLink.Name</a>
+            }
+        </div>
+    </div>
+</section>

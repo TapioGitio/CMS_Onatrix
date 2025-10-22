@@ -4,19 +4,4 @@
     Layout = "mainLayout.cshtml";
 }
 
-<section id="hero">
-    @if (Model.HeroBgImage != null)
-    {
-        <img class="hero-img" src="@Model.HeroBgImage.Url()" alt="">   
-    }
-    <div class="container">
-        <div class="hero-content">
-            <h1>@Model.HeroTitle</h1>
-            <div class="rte">@Html.Raw(Model.HeroText)</div>
-            @if (Model.HeroLink != null)
-            {
-                <a href="@Model.HeroLink.Url" class="btn btn-primary">@Model.HeroLink.Name</a>
-            }
-        </div>
-    </div>
-</section>
+@Html.GetBlockListHtml(Model.Sections)
