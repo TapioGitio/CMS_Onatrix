@@ -1,18 +1,22 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
 @{
-	Layout = "mainLayout.cshtml";
+    Layout = "mainLayout.cshtml";
 }
 
 <section id="hero">
-    <img class="hero-img" src="images/header_img.svg" alt="">
+    @if (Model.HeroBgImage != null)
+    {
+        <img class="hero-img" src="@Model.HeroBgImage.Url()" alt="">   
+    }
     <div class="container">
         <div class="hero-content">
-            <h1>We bring success to you</h1>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quae maxime molestias quam soluta nesciunt deserunt itaque inventore voluptates necessitatibus.</p>
-            </div>
-            <button class="btn btn-primary">Contact Us</button>
+            <h1>@Model.HeroTitle</h1>
+            <div class="rte">@Html.Raw(Model.HeroText)</div>
+            @if (Model.HeroLink != null)
+            {
+                <a href="@Model.HeroLink.Url" class="btn btn-primary">@Model.HeroLink.Name</a>
+            }
         </div>
     </div>
 </section>
