@@ -2,8 +2,12 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
     Layout = null;
-   
-    var pageTitle = !string.IsNullOrEmpty(Model.Name) ? $"Onatrix | {Model.Name}" : $"Onatrix";
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var siteName = siteSettings?.SiteName ?? "Onatrix";
+    var title = Model.Level == 1 ? $"{siteName}" : $"{siteName} | {Model.Name}";
+
 }
 
 <!DOCTYPE html>
@@ -11,11 +15,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@pageTitle</title>
+    <title>@title</title>
     <link href="~/css/styles.css" rel="stylesheet">
 </head>
 <body>
-
+	<partial name="Partials/Layout/_Topbar.cshtml" />
     @RenderBody()
 
 </body>

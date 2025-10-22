@@ -192,6 +192,7 @@ select {
 /* HOME PAGE */
 /* Topbar */
 #topbar {
+    padding: .3rem 0;
     background-color: var(--clr-primary);
 }
     #topbar .container {
@@ -203,17 +204,17 @@ select {
     font-size: 13px;
     color: var(--clr-white);
 }
-.right-head button {
+.right-head a {
     background-color: var(--clr-primary);
     padding: .5rem;
     border: none;
     cursor: pointer;
 }
-    .right-head button i {
+    .right-head a i {
         color: var(--clr-white);
     }
 @media (max-width: 768px) {
-    .right-head button {
+    .right-head a {
         display: none;
     }
 }
