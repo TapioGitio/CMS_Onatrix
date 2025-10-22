@@ -1,9 +1,8 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
 @{
     var rootContent = Umbraco.ContentAtRoot();
     var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
-
     var contactAddress = siteSettings?.ContactAddress ?? "No address";
 }
 
