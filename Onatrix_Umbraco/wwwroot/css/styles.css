@@ -61,7 +61,9 @@ h6 {
     font-size: 14px;
     font-weight: 800;
 }
-
+ul > li {
+    list-style: none;
+}
 
 /* Layout */
 .container {
@@ -223,9 +225,6 @@ select {
 #header {
     background-color: var(--clr-white);
     padding: 1rem 0;
-}
-#header ul {
-    list-style: none;
 }
 nav {
     display: flex;
@@ -626,6 +625,29 @@ footer {
 }
 .page-header-content {
     place-items: center;
+}
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    font-size: .9rem;
+}
+.breadcrumb a {
+    position: relative;
+    text-decoration: none;
+    color: var(--clr-primary);
+}
+.breadcrumb a:hover {
+    color: var(--clr-secondary-dark);
+}
+.breadcrumb i {
+    color: var(--clr-primary-dark);
+    margin-left: .5rem;
+    font-size: .7rem;
+}
+.breadcrumb .active {
+    color: var(--clr-secondary-dark);
 }
 .header-img-left {
     position: absolute;
