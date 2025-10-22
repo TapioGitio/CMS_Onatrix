@@ -1,18 +1,7 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
 @{
-	Layout = "mainLayout.cshtml";
+    Layout = "mainLayout.cshtml";
 }
 
-<section id="hero">
-    <img class="hero-img" src="images/header_img.svg" alt="">
-    <div class="container">
-        <div class="hero-content">
-            <h1>We bring success to you</h1>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quae maxime molestias quam soluta nesciunt deserunt itaque inventore voluptates necessitatibus.</p>
-            </div>
-            <button class="btn btn-primary">Contact Us</button>
-        </div>
-    </div>
-</section>
+@Html.GetBlockListHtml(Model.Sections)
