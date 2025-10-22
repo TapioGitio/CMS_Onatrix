@@ -1,7 +1,45 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
 
 @{
-	var rootContent = Umbraco.ContentAtRoot();
-	var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var contactAddress = siteSettings?.ContactAddress ?? "No address";
 }
 
+<section id="topbar">
+    <div class="container">
+        <div class="left-head">      
+            <p>@contactAddress</p>      
+        </div>
+        <div class="right-head">
+            @if (siteSettings?.PlatformList != null)
+            {
+                foreach (var item in siteSettings.PlatformList)
+                {
+                    if (item.Content is SocialMediaItem media)
+                    {
+                        switch (media.PlatformName!.ToLower())
+                        {
+							case "facebook":
+                                <a href="@media.PlatformAccountUrl" target="_blank"><i class="bi bi-facebook"></i></a>
+                                break;
+							case "x":
+                                <a href="@media.PlatformAccountUrl" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                                break;
+						    case "instagram":
+								<a href="@media.PlatformAccountUrl" target="_blank"><i class="bi bi-instagram"></i></a>
+								break;
+                            case "linkedin":
+                                <a href="@media.PlatformAccountUrl" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                break;
+                            case "youtube":
+                                <a href="@media.PlatformAccountUrl" target="_blank"><i class="bi bi-youtube"></i></a>
+                                break;
+                        } 
+                    }
+                }
+            }
+        </div>
+    </div>
+</section>
