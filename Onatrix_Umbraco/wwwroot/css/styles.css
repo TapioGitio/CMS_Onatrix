@@ -68,11 +68,63 @@ h6 {
     font-size: 0.875rem;
     font-weight: 800;
 }
-ul > li {
-    list-style: none;
-}
 a {
     text-decoration: none;
+}
+
+/* Rich Text Editor */
+.rteXl {
+    font-size: 4.375rem;
+}
+.rteLg {
+    font-size: 2.5rem;
+}
+.rteMd {
+    font-size: 1.25rem;
+}
+.rteSm {
+    font-size: 1rem;
+}
+.rteXs {
+    font-size: 0.875rem;
+}
+.rteLight {
+    font-weight: 300;
+}
+.rteRegular {
+    font-weight: 400;
+}
+.rteBold {
+    font-weight: 600;
+}
+.rteClrPrimary {
+    color: var(--clr-primary);
+}
+.rteClrSecondary {
+    color: var(--clr-secondary-dark);
+}
+.rteClrBody {
+    color: var(--clr-body-text);
+}
+.rteClrBodyLight {
+    color: var(--clr-gray-dimmed);
+}
+.rteUl {
+    list-style: disc;
+    padding-left: 1rem;
+}
+.rteUl li {
+    margin-top: 1rem;
+    color: var(--clr-body-text);
+}
+.rteUl li::marker {
+    color: var(--clr-secondary-dark);
+}
+.rte p {
+    margin-bottom: .5rem;
+}
+.rte img {
+    margin-top: .5rem;
 }
 
 /* Layout */
@@ -262,6 +314,7 @@ nav {
         font-weight: 600;
     }
 .nav-links {
+    list-style: none;
     display: flex;
     gap: 3rem;
 }
@@ -642,6 +695,7 @@ footer {
     place-items: center;
 }
 .breadcrumb {
+    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
