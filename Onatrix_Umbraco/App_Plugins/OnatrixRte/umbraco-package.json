@@ -1,0 +1,206 @@
+{
+  "name": "Onatrix Rte",
+  "alias": "Onatrix.Rte",
+  "extensions": [
+    {
+      "type": "tiptapToolbarExtension",
+      "kind": "styleMenu",
+      "alias": "Onatrix.Tiptap.StyleMenu",
+      "name": "Onatrix Tiptap Style Menu",
+      "meta": {
+        "alias": "OnatrixStyleMenu",
+        "icon": "icon-palette",
+        "label": "Onatrix styles"
+      },
+      "items": [
+        {
+          "label": "Paragraphs",
+          "items": [
+            {
+              "label": "Xl - 70px",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteXl rteLight"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteXl rteRegular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteXl rteBold"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "L - 40px",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteLg rteLight"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteLg rteRegular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteLg rteBold"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "M - 20px",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteMd rteLight"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteMd rteRegular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteMd rteBold"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "S - 16px",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteSm rteLight"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteSm rteRegular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteSm rteBold"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "XS - 14px",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteXs rteLight"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteXs rteRegular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rteXs rteBold"
+                  }
+                }
+              ]
+            },
+            {
+                "label": "Bullets",
+                "data": {
+                "tag": "ul",
+                "class": "rteUl"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tiptapToolbarExtension",
+      "kind": "styleMenu",
+      "alias": "Onatrix.Tiptap.ColorMenu",
+      "name": "Onatrix Tiptap Color Menu",
+      "meta": {
+        "alias": "OnatrixColorMenu",
+        "icon": "icon-palette",
+        "label": "Onatrix Color"
+      },
+      "items": [
+        {
+          "label": "Primary",
+          "data": {
+            "tag": "span",
+            "class": "rteClrPrimary"
+          },
+          "appearance": { "style": "background-color:#4F5955; color:#fff; padding:5px;" }
+        },
+        {
+          "label": "Secondary",
+          "data": {
+            "tag": "span",
+            "class": "rteClrSecondary"
+          },
+          "appearance": { "style": "background-color:#D9C3A9; color:#fff; padding:5px;" }
+        },
+        {
+          "label": "Body",
+          "data": {
+            "tag": "span",
+            "class": "rteClrBody"
+          },
+          "appearance": { "style": "background-color:#535656; color:#fff; padding:5px;" }
+        },
+        {
+          "label": "Body Light",
+          "data": {
+            "tag": "span",
+            "class": "rteClrBodyLight"
+          },
+          "appearance": { "style": "background-color:#999999; color:#fff; padding:5px;" }
+        }
+      ]
+    }
+  ]
+}
