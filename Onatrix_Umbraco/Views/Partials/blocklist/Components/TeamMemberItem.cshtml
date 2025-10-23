@@ -4,13 +4,14 @@
     var content = (ContentModels.TeamMemberItem)Model.Content;
 }
 
-<div>
+<div class="team-box">
     @if (content.TeamMemberImage != null)
     {
         <img src="@content.TeamMemberImage.Url()" alt="@content.TeamMemberName" />
     }
-    <div>
-        <h4>@content.TeamMemberName</h4>
+    <div class="team-text">
+        <h5>@content.TeamMemberName</h5>
         <p>@content.TeamMemberRole</p>
     </div>
 </div>
+
