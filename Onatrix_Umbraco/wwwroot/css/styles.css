@@ -71,6 +71,9 @@ h6 {
 ul > li {
     list-style: none;
 }
+a {
+    text-decoration: none;
+}
 
 /* Layout */
 .container {
@@ -361,18 +364,9 @@ nav {
 .main-content {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
-.main-cursive {
-    font-size: 20px;
-    font-weight: 200;
-    font-style: italic;
-}
-.main-info {
-    font-size: 14px;
-}
-.signature {
-    font-size: 14px;
+.main-content .rte {
+    color: var(--clr-body-text);
 }
 @media (max-width: 1400px) {
     .main-form {
@@ -384,7 +378,6 @@ nav {
         grid-template-columns: 1fr;
         place-items: center;
     }
-
     .main-form {
         position: relative;
         top: 0;
@@ -657,7 +650,6 @@ footer {
 }
 .breadcrumb a {
     position: relative;
-    text-decoration: none;
     color: var(--clr-primary);
 }
 .breadcrumb a:hover {

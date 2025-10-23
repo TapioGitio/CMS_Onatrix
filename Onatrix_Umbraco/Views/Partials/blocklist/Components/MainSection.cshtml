@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.MainSection)Model.Content;
+}
+
+<section id="main">
+    <div class="container">
+
+        <div class="main-content">
+            <p class="page-title">@content.MainLabel</p>
+            <div>@content.MainTitle</div>
+            <div class="rte">
+				@Html.Raw(content.MainText)
+            </div>
+        </div>
+
+        <div class="main-form">
+            <h2 class="form-title">Request a call back</h2>
+            <form>
+                <p class="form-info">Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email address">
+                <input type="text" placeholder="Phone">
+                <select name="" id=""></select>
+                <button class="btn btn-secondary" type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</section>
