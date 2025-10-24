@@ -3,7 +3,7 @@
 @{
     var rootContent = Umbraco.ContentAtRoot();
     var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
-    var contactAddress = siteSettings?.ContactAddress ?? "No address";
+    var contactAddress = siteSettings?.ContactAddress;
 }
 
 <section id="topbar">
