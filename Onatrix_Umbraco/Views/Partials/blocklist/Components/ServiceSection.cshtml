@@ -1,0 +1,54 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ServiceSettings;
+
+    var sectíonColor = settings?.ServiceBgColor?.Color ?? "#FFFFFF";
+
+    var current = Umbraco.AssignedContentItem;
+    var pageRoot = current.Root();
+
+    var servicePage = pageRoot?.Children<ServicePage>()?.FirstOrDefault();
+    var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+}
+
+@if (!string.IsNullOrEmpty(sectíonColor))
+{
+    <style>
+        #services {
+        background-color: @sectíonColor;
+        }
+    </style>
+}
+<section id="services">
+
+    <div class="services-title">
+        <p class="page-title">@content.ServiceLabel</p>
+        <div>@Html.Raw(content.ServiceTitle)</div>
+    </div>
+
+    <div class="container">
+        <div class="grid-container">
+
+            @if (items.Any())
+            {
+                @foreach(var item in items)
+                {
+                    <div class="service-card">
+                        <a href="@item.Url()">
+                            <h4>@item.Name</h4>
+                            <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/services_bonds.svg")" class="service-card-img" alt="">
+                            <p>@item.ServiceDetailQuote</p>
+                        </a>
+                    </div>                 
+                }
+            }
+            else
+            {
+                <p>No services at the moment</p>
+            }
+        </div>
+
+    </div>
+</section>
