@@ -1,0 +1,37 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.SuccessSection)Model.Content;
+    var successList = content.SuccessBoxList;
+}
+
+<section id="success">
+    <div class="success-title">
+        <p class="page-title">@content.SuccessLabel</p>
+        <div class="rte">@Html.Raw(content.SuccessTitle)</div>
+    </div>
+
+    <div class="container">
+        <div class="success-bg">
+            <img src="@(content.SuccessBackgroundImage?.Url() ?? "~/images/onatrix_brand.svg")" alt="">
+        </div>
+
+        <div class="grid-container">
+            @if (successList != null)
+            {
+                foreach (var item in successList)
+                {
+					<partial name="Partials/Blocklist/Components/SuccessBoxItem" model="item" />
+                }
+            }
+        </div>
+
+    </div>
+
+    <div class="success-img">
+        <img src="@(content.SuccessImage?.Url() ?? "~/images/onatrix_brand.svg")" alt="">
+    </div>
+</section>
+
+
+
