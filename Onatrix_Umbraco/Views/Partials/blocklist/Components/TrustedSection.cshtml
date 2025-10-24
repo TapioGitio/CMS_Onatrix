@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TrustedSection)Model.Content;
+}
+
+<section id="trusted">
+    <div class="trusted-content">
+        <div>@Html.Raw(content.TrustedTitle)</div>
+        <p>@Html.Raw(content.TrustedText)</p>
+
+        @if (content.TrustedLink != null)
+        {
+            <div class="trusted-link">
+                <a href="@content.TrustedLink.Url" class="btn btn-primary">@content.TrustedLink.Name</a>
+            </div>
+        }
+    </div>
+
+    <div class="container">
+        <img class="trusted-img" src="@(content.TrustedImage?.Url() ?? "~/images/onatrix_brand.svg" )" alt="">
+    </div>
+</section>
