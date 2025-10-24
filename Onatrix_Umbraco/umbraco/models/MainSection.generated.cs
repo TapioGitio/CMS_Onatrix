@@ -55,7 +55,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainLabel")]
-		public virtual string MainLabel => this.Value<string>(_publishedValueFallback, "mainLabel");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString MainLabel => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "mainLabel");
 
 		///<summary>
 		/// Text

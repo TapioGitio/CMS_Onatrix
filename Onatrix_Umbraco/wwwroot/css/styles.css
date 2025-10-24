@@ -96,7 +96,7 @@ a {
     font-weight: 400;
 }
 .rteBold {
-    font-weight: 600;
+    font-weight: 800;
 }
 .rteClrPrimary {
     color: var(--clr-primary);
@@ -479,17 +479,16 @@ nav {
 .trusted-content {
     max-width: 600px;
     margin: 0 auto;
-    text-align: center;
 }
-.trusted-clients {
-    color: var(--clr-secondary-dark);
-}
-.trusted-content button {
+.trusted-link {
+    display: grid;
+    place-self: center;
     margin-top: 2rem;
 }
 .trusted-img {
     margin-top: 5rem;
     width: 100%;
+    object-fit: cover;
 }
 
 /* Success */
