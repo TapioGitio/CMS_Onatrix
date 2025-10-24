@@ -199,6 +199,14 @@
             "class": "rteClrBodyLight"
           },
           "appearance": { "style": "background-color:#999999; color:#fff; padding:5px;" }
+        },
+        {
+          "label": "Body White",
+          "data": {
+            "tag": "span",
+            "class": "rteClrBodyWhite "
+          },
+          "appearance": { "style": "background-color:#ffffff; color:#333333; padding:5px;" }
         }
       ]
     }

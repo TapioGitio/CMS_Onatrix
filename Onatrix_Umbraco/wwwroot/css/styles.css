@@ -21,7 +21,7 @@
     --clr-secondary-light: #F2EDDC;
     --clr-secondary-dark: #D9C3A9;
     --clr-icon-gray: #B9B9B9;
-    --clr-white: #fff;
+    --clr-white: #ffffff;
     --clr-white-dimmed: #F7F7F7;
     --clr-black: #0E0E0E;
     --clr-body-text: #535656;
@@ -109,6 +109,9 @@ a {
 }
 .rteClrBodyLight {
     color: var(--clr-gray-dimmed);
+}
+.rteClrBodyWhite {
+    color: var(--clr-white);
 }
 .rteUl {
     list-style: disc;
@@ -500,9 +503,10 @@ nav {
 .success-title {
     text-align: center;
 }
-    .success-title h2 {
-        color: var(--clr-white);
-    }
+#success .rte {
+    position:relative;
+    z-index: 999;
+}
 #success .container {
     position: relative;
 }
