@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.RecentBoxItem)Model.Content;
+}
+
+<a href="/" class="p-box">
+    <img src="@(content.RecentBoxImage?.Url() ?? "~/images/onatrix_brand.svg")" alt="">
+    <div class="p-content">
+        <p class="p-title">@content.RecentBoxTitle</p>
+        <span class="p-genre">@content.RecentBoxGenre</span>
+    </div>
+</a>
+
+

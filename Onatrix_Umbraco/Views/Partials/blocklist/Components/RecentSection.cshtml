@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.RecentSection)Model.Content;
+    var recentList = content.RecentList;
+}
+
+<section id="recent">
+    <div class="container">
+        <div class="recent-content">
+            <p class="page-title">@content.RecentLabel</p>
+            <h2>@content.RecentTitle</h2>
+        </div>
+    </div>
+    <div class="grid-container">
+        @if (recentList != null)
+        {
+            foreach (var item in recentList)
+            {
+				<partial name="Partials/Blocklist/Components/RecentBoxItem" model="item" />
+            }
+        }
+
+
+    </div>
+</section>
+
+
