@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.BrandSection)Model.Content;
+    var successList = content.BrandList;
+}
+
+<section id="brands">
+    <div class="container">
+        <div class="grid-container">
+            @if (successList != null)
+            {
+                foreach (var item in successList)
+                {
+					<partial name="Partials/Blocklist/Components/BrandBoxItem" model="item" />
+                }
+            }
+        </div>
+    </div>
+</section>
+
+
+
+
+
