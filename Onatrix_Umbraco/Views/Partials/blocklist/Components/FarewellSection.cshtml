@@ -1,0 +1,49 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.FarewellSection)Model.Content;
+	var pageSettings = Model.Settings as ContentModels.FarewellSettings;
+	var siteSettings = Umbraco.ContentAtRoot().OfType<ContentModels.SiteSettings>().FirstOrDefault();
+
+    var sectíonColor = pageSettings?.FarewellBgColor?.Color ?? "#FFFFFF";
+}
+
+@if (!string.IsNullOrEmpty(sectíonColor))
+{
+    <style>
+        #farewell {
+            background-color: @sectíonColor;
+        }
+    </style>
+}
+<section id="farewell">
+    <div class="container">
+        <div class="farewell-img">
+            <img class="bigguy" src="@(content.FarewellImage?.Url() ?? "~/images/onatrix_brand.svg") " alt="">
+
+            @if (content.FarewellBackgroundImage != null)
+            {
+                <img class="bigguy-bg" src="@content.FarewellBackgroundImage?.Url()" alt="">     
+            }
+        </div>
+
+        <div class="farewell-info">
+            <h2>Let us know about your next project</h2>
+
+            <div class="farewell-details">
+                <i class="bi bi-geo-alt"></i><span>Office location</span>
+                <p>@(siteSettings?.ContactAddress ?? "No Location added")</p>
+            </div>
+            <div class="farewell-details">
+                <i class="bi bi-telephone"></i><span>Phone number</span>
+                <p>@(siteSettings?.ContactPhone ?? "No Phonenumber added")</p>
+            </div>
+            <div class="farewell-details">
+                <i class="bi bi-envelope"></i><span>E-mail address</span>
+                <p>@(siteSettings?.ContactEmail ?? "No Email added")</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
