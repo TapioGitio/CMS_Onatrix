@@ -792,11 +792,7 @@ footer {
         color: var(--clr-primary);
         font-style: italic;
     }
-.ceo-statement h5 {
-    font-weight: 400;
-    font-style: italic;
-}
-.ceo-statement p {
+#ceo .rte p {
     margin-bottom: 2rem;
 }
 @media(max-width: 1200px) {
@@ -833,17 +829,6 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-.review-info {
-    color: var(--clr-gray-dimmed);
-    font-style: italic;
-    margin-bottom: 1rem;
-}
-.review-name {
-    margin-top: 1rem;
-}
-.review-company {
-    font-style: italic;
 }
 @media (min-width: 992px) {
     .review-content {

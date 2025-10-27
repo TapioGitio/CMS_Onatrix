@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.CeoSection)Model.Content;
+}
+
+<section id="ceo">
+    <div class="container">
+        <div class="grid-container">
+            <div class="ceo-box">
+                @if (content.CeoImage != null)
+                {
+                    <img src="@content.CeoImage.Url()" alt="@content.CeoImage.Name">
+                }
+                <small>Tina Fox - CEO & Founder at Onatrix</small>
+            </div>
+            <div class="rte">
+                @Html.Raw(content.CeoStatement)
+            </div>
+        </div>
+    </div>
+</section>
+

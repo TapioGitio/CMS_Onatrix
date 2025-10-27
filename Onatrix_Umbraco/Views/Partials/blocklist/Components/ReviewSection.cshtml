@@ -11,12 +11,11 @@
             <h2>@content.ReviewTitle</h2>
             <div class="rte">@Html.Raw(content.ReviewText)</div>
         </div>
-
+      
         @if (content.ReviewImage != null)
         {
             <img src="@content.ReviewImage.Url()" alt="Review Image">    
 		}
-)
     </div>
 
 </section>
