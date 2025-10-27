@@ -680,12 +680,15 @@ nav {
 
 /* Footer */
 footer {
-    display: flex;
     background-color: var(--clr-black);
-    height: 60px;
+    padding: 1rem 0;
+}
+.footer-content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
     footer a {
-        text-decoration: none;
         color: var(--clr-secondary-dark);
     }
     footer p {

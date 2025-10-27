@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var rootContent = Umbraco.ContentAtRoot();
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+    var creator = siteSettings?.SiteCreator;
+}
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p>© Onatrix. All Rights Reserved. Credits to <a href="/">@creator</a></p>  
+        </div>
+    </div>
+</footer>
