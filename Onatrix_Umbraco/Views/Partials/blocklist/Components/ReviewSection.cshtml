@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ReviewSection)Model.Content;
+}
+
+<section id="review">
+    <div class="splitscreen">
+        <div class="review-content">
+            <p class="page-title">@content.ReviewLabel</p>
+            <h2>@content.ReviewTitle</h2>
+            <div class="rte">@Html.Raw(content.ReviewText)</div>
+        </div>
+
+        @if (content.ReviewImage != null)
+        {
+            <img src="@content.ReviewImage.Url()" alt="Review Image">    
+		}
+)
+    </div>
+
+</section>
+
+
+
+
+
