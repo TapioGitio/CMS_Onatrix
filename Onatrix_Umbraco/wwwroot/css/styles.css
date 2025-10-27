@@ -930,7 +930,6 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    object-fit: contain;
     z-index: 0;
 }
 .farewell-details {
