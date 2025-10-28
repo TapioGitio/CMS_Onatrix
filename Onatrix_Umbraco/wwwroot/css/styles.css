@@ -184,6 +184,12 @@ a {
     grid-column: span 3;
     grid-row: 2;
 }
+.divider {
+    width: 1px;
+    background-color: var(--clr-border);
+    margin: 0 auto;
+}
+
 
 /* Components */
 .btn {
@@ -272,7 +278,7 @@ select {
         border-color: var(--clr-secondary-dark);
     }
 
-/* HOME PAGE */
+/* SECTIONS */
 /* Topbar */
 #topbar {
     padding: .3rem 0;
@@ -351,6 +357,87 @@ nav {
     }
     .search-btn {
         display: none;
+    }
+}
+
+/* page-header */
+#page-header {
+    padding: 4rem 0;
+    background-color: var(--clr-white-dimmed);
+    position: relative;
+    display: grid;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 10px 50px #aaa7a734;
+}
+
+.page-header-content {
+    place-items: center;
+}
+
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    font-size: .9rem;
+}
+
+    .breadcrumb a {
+        position: relative;
+        color: var(--clr-primary);
+    }
+
+        .breadcrumb a:hover {
+            color: var(--clr-secondary-dark);
+        }
+
+    .breadcrumb i {
+        color: var(--clr-primary-dark);
+        margin-left: .5rem;
+        font-size: .7rem;
+    }
+
+    .breadcrumb .active {
+        color: var(--clr-secondary-dark);
+    }
+
+.header-img-left {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.header-img-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@media(max-width: 1200px) {
+    .header-img-right {
+        right: -10rem;
+    }
+}
+
+@media(max-width: 992px) {
+    .header-img-right {
+        right: -20rem;
+    }
+
+        .header-img-right img {
+            width: 60%;
+        }
+}
+
+@media(max-width: 768px) {
+    .header-img-left img {
+        width: 80%;
+    }
+
+    .header-img-right {
+        right: -25rem;
     }
 }
 
@@ -472,6 +559,55 @@ nav {
 .service-card-img {
     width: 100%;
     object-fit: cover;
+}
+
+/* Services / Service Detail */
+#service-detail {
+    padding: 4rem 0;
+}
+
+.aside-content {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    grid-column: span 3;
+}
+
+.info-content {
+    grid-column: span 8;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: var(--clr-primary);
+    background-image: url(~/images/Mail.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    color: var(--clr-white-dimmed);
+}
+    .form-card h4 {
+        color: var(--clr-secondary-light);
+    }
+    .form-card p {
+        font-size: 14px;
+    }
+
+.info-content img {
+    width: 100%;
+    object-fit: cover;
+    margin: 1rem 0;
+    border-radius: 4px;
 }
 
 /* Trusted */
@@ -695,76 +831,6 @@ footer {
         font-size: 14px;
     }
 
-/* ABOUT PAGE */
-/* page-header */
-#page-header {
-    padding: 4rem 0;
-    background-color: var(--clr-white-dimmed);
-    position: relative;
-    display: grid;
-    width: 100%;
-    overflow: hidden;
-    box-shadow: 0 10px 50px #aaa7a734;
-}
-.page-header-content {
-    place-items: center;
-}
-.breadcrumb {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    font-size: .9rem;
-}
-.breadcrumb a {
-    position: relative;
-    color: var(--clr-primary);
-}
-.breadcrumb a:hover {
-    color: var(--clr-secondary-dark);
-}
-.breadcrumb i {
-    color: var(--clr-primary-dark);
-    margin-left: .5rem;
-    font-size: .7rem;
-}
-.breadcrumb .active {
-    color: var(--clr-secondary-dark);
-}
-.header-img-left {
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-}
-.header-img-right {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-@media(max-width: 1200px) {
-    .header-img-right {
-        right: -10rem;
-    }
-}
-@media(max-width: 992px) {
-    .header-img-right {
-        right: -20rem;
-    }
-        .header-img-right img {
-            width: 60%;
-        }
-}
-@media(max-width: 768px) {
-    .header-img-left img {
-        width: 80%;
-    }
-
-    .header-img-right {
-        right: -25rem;
-    }
-}
-
 /* Ceo */
 #ceo {
     padding: 4rem 0;
@@ -956,7 +1022,6 @@ footer {
     }
 }
 
-/* CONTACT PAGE */
 /* Callback */
 #callback {
     padding: 8rem 0;

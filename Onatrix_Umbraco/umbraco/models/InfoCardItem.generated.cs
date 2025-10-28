@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Service Detail</summary>
-	[PublishedModel("serviceDetail")]
-	public partial class ServiceDetail : PublishedContentModel, IPageHeader
+	/// <summary>Info Card Item</summary>
+	[PublishedModel("infoCardItem")]
+	public partial class InfoCardItem : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		public new const string ModelTypeAlias = "serviceDetail";
+		public new const string ModelTypeAlias = "infoCardItem";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<ServiceDetail, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<InfoCardItem, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public ServiceDetail(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public InfoCardItem(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,43 +50,27 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Body
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("serviceDetailBody")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ServiceDetailBody => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "serviceDetailBody");
+		[ImplementPropertyType("infoCardImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops InfoCardImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "infoCardImage");
 
 		///<summary>
-		/// Quote
+		/// Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("serviceDetailQuote")]
-		public virtual string ServiceDetailQuote => this.Value<string>(_publishedValueFallback, "serviceDetailQuote");
+		[ImplementPropertyType("infoCardText")]
+		public virtual string InfoCardText => this.Value<string>(_publishedValueFallback, "infoCardText");
 
 		///<summary>
-		/// Thumbnail
+		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("serviceDetailThumbnail")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ServiceDetailThumbnail => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "serviceDetailThumbnail");
-
-		///<summary>
-		/// Widgets
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("widgets")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Widgets => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "widgets");
-
-		///<summary>
-		/// Page Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("pageTitle")]
-		public virtual string PageTitle => global::Umbraco.Cms.Web.Common.PublishedModels.PageHeader.GetPageTitle(this, _publishedValueFallback);
+		[ImplementPropertyType("infoCardTitle")]
+		public virtual string InfoCardTitle => this.Value<string>(_publishedValueFallback, "infoCardTitle");
 	}
 }

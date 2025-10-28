@@ -2,23 +2,22 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetail>
 @{
 	Layout = "mainLayout.cshtml";
+	
 }
 
 <partial name="Partials/Layout/_PageHeader.cshtml" model="(IPageHeader)Model" />
 
 <section id="service-detail">
 	<div class="container">
-		<div>
-			<aside>
-				aside
+		<div class="grid">
+			<aside class="aside-content">
+				@Html.GetBlockListHtml(Model.Widgets)
 			</aside>
 
-			<div>
-				linje
-			</div>
+			<div class="divider"></div>
 
-			<div>
-				content
+			<div class="rte info-content">
+				@Html.Raw(Model.ServiceDetailBody)
 			</div>
 
 		</div>
