@@ -567,7 +567,6 @@ nav {
 }
 
 .aside-content {
-    max-width: 350px;
     display: flex;
     flex-direction: column;
     grid-column: span 3;
@@ -591,10 +590,11 @@ nav {
     padding: 1rem;
     border-radius: 4px;
     background-color: var(--clr-primary);
-    background-image: url(~/images/Mail.svg);
+    background-image: url(/images/Mail.svg);
     background-repeat: no-repeat;
     background-position: bottom right;
     color: var(--clr-white-dimmed);
+    margin-bottom: 2rem;
 }
     .form-card h4 {
         color: var(--clr-secondary-light);
@@ -608,6 +608,17 @@ nav {
     object-fit: cover;
     margin: 1rem 0;
     border-radius: 4px;
+}
+@media (max-width: 992px) {
+    .info-content {
+        grid-row: 1;
+        grid-column: span 12;
+    }
+    .aside-content {
+        grid-column: span 12;
+        grid-row: 2;
+    }
+
 }
 
 /* Trusted */
