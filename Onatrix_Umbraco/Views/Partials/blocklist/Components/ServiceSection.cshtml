@@ -24,7 +24,10 @@
 <section id="services">
 
     <div class="services-title">
-        <p class="page-title">@content.ServiceLabel</p>
+        @if (settings!.ShowServiceLabel)
+        {
+            <p class="page-title">@content.ServiceLabel</p>
+        }
         <div>@Html.Raw(content.ServiceTitle)</div>
     </div>
 
