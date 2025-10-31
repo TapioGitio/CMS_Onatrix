@@ -28,7 +28,7 @@ public class FormsController(IUmbracoContextAccessor umbracoContextAccessor, IUm
             TempData["FormError"] = "There was an error submitting your callback request. Please try again later.";
         }
 
-        TempData["FormSuccess"] = "Your callback request has been submitted successfully.";
+        TempData["FormSuccess"] = "Your callback request has been submitted!.";
         return RedirectToCurrentUmbracoPage();
     }
 }

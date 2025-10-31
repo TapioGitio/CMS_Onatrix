@@ -14,12 +14,12 @@
 
     <div class="container">
         <div class="contact-form">
-            <form>
-                <div class="contact-form-title">
-                    <span class="page-title">@content.CallbackLabel</span>
-                    <h2>@content.CallbackTitle</h2>
-                    <div class="rte">@Html.Raw(content.CallbackText)</div>
-                </div>
+
+            <div class="form">
+
+
+                <div class="rte">@Html.Raw(content.CallbackFormDescription)</div>
+             
                 <div class="grid-container">
                     <input type="text" placeholder="Name">
                     <input type="text" placeholder="Email address">
@@ -27,7 +27,8 @@
                     <select name="" id=""></select>
                 </div>
                 <button class="btn btn-primary" type="submit">Submit</button>
-            </form>
+            </div>
+
         </div>
     </div>
 </section>

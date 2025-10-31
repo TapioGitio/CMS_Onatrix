@@ -317,6 +317,9 @@ select {
     max-width: 600px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.main-form .rte {
+    margin: 1rem 2rem;
+}
 
 .contact-form {
     position: absolute;
@@ -325,7 +328,13 @@ select {
     right: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-    .contact-form form {
+.contact-form .rte {
+    max-width: 600px;
+}
+    .contact-form .rte p {
+        margin-bottom: 1rem;
+    }
+    .contact-form .form {
         display: grid;
         place-items: center;
     }
@@ -1121,9 +1130,7 @@ footer {
 .contact-form .grid-container {
     grid-template-columns: 1fr 1fr;
 }
-.contact-form button {
-    margin-bottom: 2rem;
-}
+
 @media(max-width: 992px) {
     .contact-form {
         top: 2rem;

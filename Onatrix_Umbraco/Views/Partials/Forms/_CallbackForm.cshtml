@@ -26,9 +26,14 @@
             <label asp-for="SelectedOption"></label>
             <div class="select">
                 <select asp-for="SelectedOption">
+
                     <option value="" disabled hidden selected>Select an option</option>
-                    <option value="Kikkeli">Kikkeli</option>
-                    <option value="kalle">kalle</option>
+
+                    @foreach (var option in Model.Options)
+                    {
+                        <option value="@option">@option</option>
+					}
+	)
                 </select>
 
                 <span class="select-arrow">

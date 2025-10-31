@@ -4,6 +4,10 @@
 @{
     var content = (ContentModels.MainSection)Model.Content;
     var settings = Model.Settings as ContentModels.MainSettings;
+    var formVM = new CallbackFormViewModel
+    {
+		Options = settings?.CallbackRequestOption ?? []
+	};
 }
 
 <section id="main">
@@ -18,12 +22,10 @@
         </div>
 
         <div class="main-form">
-            <div>
-                <h2 class="form-title">@content.CallbackFormTitle</h2>
-            </div>
-            <p class="form-info">@content.CallbackFormDescription</p>
 
-            <partial name="Partials/Forms/_CallbackForm" model="new CallbackFormViewModel()" />
+            <h2 class="form-title">@content.CallbackFormTitle</h2>      
+            <div class="rte">@content.CallbackFormDescription</div>
+            <partial name="Partials/Forms/_CallbackForm" model="formVM" />
 
             @if (TempData["FormSuccess"] != null)
             {
