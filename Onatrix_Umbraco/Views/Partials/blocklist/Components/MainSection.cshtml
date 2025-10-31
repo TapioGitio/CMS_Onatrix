@@ -25,7 +25,19 @@
 
             <partial name="Partials/Forms/_CallbackForm" model="new CallbackFormViewModel()" />
 
-        </div>
+            @if (TempData["FormSuccess"] != null)
+            {
+                <div class="success">
+                    @TempData["FormSuccess"]
+                </div>
+			}
+            else if (TempData["FormError"] != null)
+            {
+                <div class="error">
+                    @TempData["FormError"]
+                </div>
+			}
 
+        </div>
     </div>
 </section>

@@ -30,6 +30,7 @@
     --clr-border: #EAEAEA;
     --clr-border-danger: #ff00006b;
     --clr-border-danger-dark: #d60000;
+    --clr-bg-success: #4de13936;
 }
 /* Typography */
 body {
@@ -293,6 +294,20 @@ select {
 .field-validation-error {
     font-size: .8rem;
     color: darkred;
+}
+.success {
+    background-color: var(--clr-bg-success);
+    color: darkgreen;
+    padding: 1rem;
+    margin: 1rem 2rem;
+    border-radius: 3px;
+}
+.error {
+    background-color: var(--clr-border-danger);
+    color: firebrick;
+    padding: 1rem;
+    margin: 1rem 2rem;
+    border-radius: 3px;
 }
 .main-form {
     position: absolute;

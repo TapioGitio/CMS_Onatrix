@@ -1,3 +1,5 @@
+using Onatrix_Umbraco.Services;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -6,12 +8,12 @@ builder.CreateUmbracoBuilder()
     .AddComposers()
     .Build();
 
+builder.Services.AddScoped<FormSubmissionsService>();
+
 WebApplication app = builder.Build();
 
 await app.BootUmbracoAsync();
-
 app.UseHttpsRedirection();
-
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
