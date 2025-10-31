@@ -128,7 +128,7 @@ a {
     color: var(--clr-secondary-dark);
 }
 .rte p {
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 .rte img {
     margin-top: .5rem;
@@ -331,9 +331,7 @@ select {
 .contact-form .rte {
     max-width: 600px;
 }
-    .contact-form .rte p {
-        margin-bottom: 1rem;
-    }
+
     .contact-form .form {
         display: grid;
         place-items: center;
