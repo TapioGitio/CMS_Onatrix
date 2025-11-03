@@ -78,16 +78,16 @@ a {
 
 /* Rich Text Editor */
 .rteXl {
-    font-size: 4.375rem;
+    font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
 }
 .rteLg {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
 }
 .rteMd {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1.5vw + 0.25rem, 1.25rem);
 }
 .rteSm {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1vw + 0.25rem, 1rem);
 }
 .rteXs {
     font-size: 0.875rem;
@@ -225,7 +225,6 @@ a {
 
 /* Forms */
 .form {
-    background-color: var(--clr-white);
     padding: 2rem;
 }
 
@@ -316,34 +315,25 @@ select {
     z-index: 20;
     max-width: 600px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--clr-white);
 }
 .main-form .rte {
     margin: 1rem 2rem;
 }
 
 .contact-form {
-    position: absolute;
-    top: 10rem;
-    left: 0;
-    right: 0;
+    width: 100%;
+    margin-top: 4rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--clr-white);
 }
 .contact-form .rte {
+    padding-top: 2rem;
+    margin: 0 auto;
     max-width: 600px;
 }
 
-    .contact-form .form {
-        display: grid;
-        place-items: center;
-    }
-.contact-form-title {
-    text-align: center;
-    max-width: 400px;
-}
-    .contact-form-title p {
-        font-size: 14px;
-        font-style: italic;
-    }
+
 
 /* SECTIONS */
 /* Topbar */
@@ -1122,26 +1112,14 @@ footer {
         height: 80%;
         object-fit: cover;
     }
-#callback .container {
+#callback .contact-form {
     position: relative;
 }
-.contact-form .grid-container {
-    grid-template-columns: 1fr 1fr;
-}
+
 
 @media(max-width: 992px) {
-    .contact-form {
-        top: 2rem;
-    }
+
 }
 @media(width <= 768px) {
-    .contact-form .grid-container {
-        grid-template-columns: 1fr;
-    }
-    .contact-form {
-        top: -4rem;
-    }
-        .contact-form button {
-            margin-bottom: 0rem;
-        }
+
 }

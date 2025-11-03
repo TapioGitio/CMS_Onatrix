@@ -50,10 +50,18 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Show Title
+		/// Options
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[ImplementPropertyType("showFormTitle")]
-		public virtual bool ShowFormTitle => this.Value<bool>(_publishedValueFallback, "showFormTitle");
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("callbackRequestOption")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> CallbackRequestOption => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "callbackRequestOption");
+
+		///<summary>
+		/// Show Form Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[ImplementPropertyType("showCallbackFormTitle")]
+		public virtual bool ShowCallbackFormTitle => this.Value<bool>(_publishedValueFallback, "showCallbackFormTitle");
 	}
 }

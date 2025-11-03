@@ -23,8 +23,12 @@
 
         <div class="main-form">
 
-            <h2 class="form-title">@content.CallbackFormTitle</h2>      
-            <div class="rte">@content.CallbackFormDescription</div>
+            @if (settings!.ShowCallbackFormTitle == true)
+            {
+                <h2 class="form-title">@content.CallbackFormTitle</h2>          
+            }
+
+            <div class="rte">@Html.Raw(content.CallbackFormDescription)</div>
             <partial name="Partials/Forms/_CallbackForm" model="formVM" />
 
             @if (TempData["FormSuccess"] != null)
@@ -32,13 +36,13 @@
                 <div class="success">
                     @TempData["FormSuccess"]
                 </div>
-			}
+		    }
             else if (TempData["FormError"] != null)
             {
                 <div class="error">
                     @TempData["FormError"]
                 </div>
-			}
+		    }
 
         </div>
     </div>
