@@ -324,6 +324,7 @@ select {
 }
 
 .contact-form {
+    padding: 1rem;
     width: 100%;
     margin-top: 8rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
