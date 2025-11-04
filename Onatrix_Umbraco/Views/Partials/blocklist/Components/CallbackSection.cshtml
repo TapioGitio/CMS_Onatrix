@@ -1,7 +1,13 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Onatrix_Umbraco.ViewModels
 @{
     var content = (ContentModels.CallbackSection)Model.Content;
+    var settings = Model.Settings as ContentModels.CallbackSettings;
+    var formVM = new CallbackFormViewModel
+    {
+        Options = settings!.CallbackRequestOption ?? []
+    };
 }
 
 <section id="callback">
@@ -15,19 +21,27 @@
     <div class="container">
         <div class="contact-form">
 
-            @* Should this be done as separate or like main? *@
-            <div class="form">
-                <div class="rte">@Html.Raw(content.CallbackFormDescription)</div>
-          
-                <div class="grid-container">
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Email address">
-                    <input type="text" placeholder="Phone">
-                    <select name="" id=""></select>
-                </div>
-                <button class="btn btn-primary" type="submit">Submit</button>
-            </div>
+            @if (settings!.ShowCallbackFormTitle == true)
+            {
+                <h2 class="form-title">@content.CallbackFormTitle</h2>
+            }
+         
+            <div class="rte">@Html.Raw(content.CallbackFormDescription)</div>
+            <partial name="Partials/Forms/_ContactForm" model="formVM" />
 
+            @if (TempData["FormSuccess"] != null)
+            {
+                <div class="success">
+                    @TempData["FormSuccess"]
+                </div>
+            }
+            else if (TempData["FormError"] != null)
+            {
+                <div class="error">
+                    @TempData["FormError"]
+                </div>
+            }      
+           
         </div>
     </div>
 </section>
