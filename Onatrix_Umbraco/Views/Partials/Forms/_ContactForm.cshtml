@@ -1,0 +1,55 @@
+﻿@using Onatrix_Umbraco.ViewModels
+@model CallbackFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleCallbackForm", "Forms", FormMethod.Post, new { novalidate = "novalidate", id = "contactForm" }))
+{
+    <div class="form">
+        <div>
+            <div class="input-container">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" />
+                <span asp-validation-for="Name"></span>
+            </div>
+
+            <div class="input-container">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" />
+                <span asp-validation-for="Email"></span>
+            </div>
+        </div>
+
+        <div>
+            <div class="input-container">
+                <label asp-for="Phone"></label>
+                <input asp-for="Phone" type="text" placeholder="@Html.DisplayNameFor(x => x.Phone)" />
+                <span asp-validation-for="Phone"></span>
+            </div>
+
+            <div class="input-container">
+                <label asp-for="SelectedOption"></label>
+                <div class="select">
+                    <select asp-for="SelectedOption">
+
+                        <option value="" disabled hidden selected>Select an option</option>
+
+                        @foreach (var option in Model.Options)
+                        {
+                            <option value="@option">@option</option>
+                        }
+
+                    </select>
+
+                    <span class="select-arrow">
+                        <i class="bi bi-arrow-down-short"></i>
+                    </span>
+                </div>
+                <span asp-validation-for="SelectedOption"></span>
+            </div>
+
+        </div>
+            
+        <div class="contact-form-btn">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </div>
+}

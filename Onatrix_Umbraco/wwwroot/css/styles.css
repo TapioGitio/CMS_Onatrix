@@ -172,6 +172,7 @@ a {
     gap: 2rem;
     overflow: hidden;
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -196,6 +197,7 @@ a {
 
 /* Components */
 .btn {
+    font-size: 1em;
     font-family: inherit;
     font-weight: 600;
     border: none;
@@ -323,17 +325,24 @@ select {
 
 .contact-form {
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 8rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--clr-white);
 }
 .contact-form .rte {
-    padding-top: 2rem;
+    padding-top: 1rem;
     margin: 0 auto;
     max-width: 600px;
 }
-
-
+#contactForm .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem;
+}
+#contactForm .contact-form-btn {
+    grid-column: span 2;
+    place-self: center;
+}
 
 /* SECTIONS */
 /* Topbar */
@@ -617,6 +626,11 @@ nav {
     width: 100%;
     object-fit: cover;
 }
+@media(max-width: 768px) {
+    #services .grid-container {
+        padding: 0;
+    }
+}
 
 /* Services / Service Detail */
 #service-detail {
@@ -873,7 +887,7 @@ nav {
     background-color: var(--clr-white);
 }
     #brands .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
     }
 .brand-box {
     display: flex;
@@ -1109,17 +1123,21 @@ footer {
 }
     .callback-bg img {
         width: 100%;
-        height: 80%;
+        height: 90%;
         object-fit: cover;
     }
 #callback .contact-form {
     position: relative;
 }
 
-
-@media(max-width: 992px) {
-
-}
-@media(width <= 768px) {
-
+@media(max-width: 768px) {
+    #callback .contact-form {
+        margin-top: 0;  
+    }
+    #contactForm .form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+    }
 }
