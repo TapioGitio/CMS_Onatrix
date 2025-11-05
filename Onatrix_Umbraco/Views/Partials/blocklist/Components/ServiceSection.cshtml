@@ -23,35 +23,41 @@
 }
 <section id="services">
 
-    <div class="services-title">
-        @if (settings!.ShowServiceLabel)
-        {
-            <p class="page-title">@content.ServiceLabel</p>
-        }
-        <div>@Html.Raw(content.ServiceTitle)</div>
-    </div>
-
     <div class="container">
-        <div class="grid-container">
-
-            @if (items.Any())
+        <div class="services-title">
+            @if (settings!.ShowServiceLabel)
             {
-                @foreach(var item in items)
-                {
-                    <div class="service-card">
-                        <a href="@item.Url()">
-                            <h4>@item.Name</h4>
-                            <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/services_bonds.svg")" class="service-card-img" alt="">
-                            <p>@item.ServiceDetailQuote</p>
-                        </a>
-                    </div>                 
-                }
+                <p class="page-title">@content.ServiceLabel</p>
             }
-            else
-            {
-                <p>No services at the moment</p>
-            }
+            <div>@Html.Raw(content.ServiceTitle)</div>
         </div>
 
+        @if (items.Any())
+        {
+            <div class="swiper serviceSwiper">
+                <div class="swiper-wrapper">
+                        @foreach (var item in items)
+                        {
+                            <div class="swiper-slide service-card">
+                                <a href="@item.Url()">
+                                    <h4>@item.Name</h4>
+                                    <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/services_bonds.svg")" class="service-card-img" alt="">
+                                    <p>@item.ServiceDetailQuote</p>
+                                </a>
+                            </div>
+                        }
+                </div>
+
+                <div class="custom-pagination">
+                    <div class="custom-prev"><i class="bi bi-arrow-left-short"></i></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="custom-next"><i class="bi bi-arrow-right-short"></i></div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <p>No services at the moment</p>
+        }
     </div>
 </section>
