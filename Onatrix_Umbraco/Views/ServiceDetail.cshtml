@@ -9,13 +9,15 @@
 
 <section id="service-detail">
 	<div class="container">
+
 		<div class="grid">
+			
 			<aside class="aside-content">
 				@Html.GetBlockListHtml(Model.Widgets)
-			</aside>
+			</aside>	
 
 			<div class="divider"></div>
-
+			
 			<div class="rte info-content">
 				@Html.Raw(Model.ServiceDetailBody)
 			</div>
