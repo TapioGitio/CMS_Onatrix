@@ -74,8 +74,7 @@ public class EmailService(EmailClient emailClient, IConfiguration configuration)
                     Html = htmlContent
                 });
 
-            var sendEmail = await _emailClient.SendAsync(WaitUntil.Started, emailMessage);
-
+            await _emailClient.SendAsync(WaitUntil.Started, emailMessage);
         }
         catch (Exception ex)
         {

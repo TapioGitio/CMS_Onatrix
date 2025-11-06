@@ -11,11 +11,12 @@ using Umbraco.Cms.Web.Website.Controllers;
 
 namespace Onatrix_Umbraco.Controllers;
 
-public class FormsController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, FormSubmissionsService formSubmissions) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+public class FormsController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider, FormSubmissionsService formSubmissions, EmailService emailService) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
 {
     private readonly FormSubmissionsService _formSubmissions = formSubmissions;
+    private readonly EmailService _emailService = emailService;
 
-    public IActionResult HandleCallbackForm(CallbackFormViewModel model)
+    public async Task<IActionResult> HandleCallbackForm(CallbackFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -28,6 +29,7 @@ public class FormsController(IUmbracoContextAccessor umbracoContextAccessor, IUm
             TempData["FormError"] = "There was an error submitting your callback request. Please try again later.";
         }
 
+        await _emailService.SendEmailAsync(model.Email);
         TempData["FormSuccess"] = "Your callback request has been submitted!.";
         return RedirectToCurrentUmbracoPage();
     }
