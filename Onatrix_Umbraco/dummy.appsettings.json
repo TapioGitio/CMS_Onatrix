@@ -36,5 +36,9 @@
         "AllowConcurrentLogins": false
       }
     }
+  },
+  "ACS": {
+    "ConnectionString": "",
+    "SenderAddress": ""
   }
 }
